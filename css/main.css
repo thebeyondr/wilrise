@@ -1,0 +1,45 @@
+/* import fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Istok+Web|Montserrat');
+:root {
+    --purple: #702E90;
+    --green: #86C143;
+    --orange: #ED8D29;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+.nav--link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p,
+a {
+    font-family: 'Istok Web', sans-serif;
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+
+/* pre nav */
+
+.prenav {
+    height: 1em;
+    background-color: var(--purple);
+    text-align: center;
+    padding: 0.2em;
+}
+
+.prenav--phone {
+    color: #ffffff;
+}
+
+.nav {
+    background-color: lightgrey;
+}
