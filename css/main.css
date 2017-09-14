@@ -22,6 +22,12 @@ a {
     color: #ffffff;
 }
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 /* pre nav */
 
@@ -237,6 +243,19 @@ a {
     list-style-type: none;
 }
 
+
+/* about styles */
+
+.mv {
+    background-color: var(--orange);
+    padding: 1.5em 1em;
+    text-align: justify;
+}
+
+.mv>* {
+    padding: 1em 0;
+}
+
 @media screen and (min-width:768px) {
     .banner--link {
         justify-self: center;
@@ -282,5 +301,18 @@ a {
     .map {
         display: block;
         grid-area: map;
+    }
+    .mv {
+        padding: 2em 3em;
+    }
+    .mission,
+    .values {
+        width: 45%;
+    }
+    .mission {
+        float: left;
+    }
+    .values {
+        float: right;
     }
 }

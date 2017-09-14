@@ -137,8 +137,6 @@ nav {
     transition: all .25s ease
 }
 
-#cssmenu ul ul li:hover {}
-
 #cssmenu li:hover>ul {
     left: auto
 }
