@@ -1,6 +1,6 @@
 /* import fonts */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Vollkorn:400,700i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 :root {
     --purple: #702E90;
     --green: #86C143;
@@ -9,21 +9,25 @@
 
 h1,
 h2,
-h3 {
-    font-family: 'Vollkorn', serif;
+h3,
+.nav--link {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 p,
-a,.nav--link {
+a {
     font-family: 'Open Sans', sans-serif;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
-a, .nav--link {
-    font-weight: 700;    
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
+
 
 /* pre nav */
 
@@ -35,17 +39,12 @@ a, .nav--link {
     font-size: 0.8em;
 }
 
-clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 /* banner */
 
 .banner {
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/img/flowerbg.jpg');
+    background-image: url('/img/flowerbg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
@@ -55,11 +54,13 @@ clearfix:after {
     display: grid;
     grid-template-columns: 1em 3fr 1em;
     grid-template-areas: "bhead bhead bhead" ". bsub . " ". blink .";
-    padding: 2em 0;
+    padding: 1.25em 0;
 }
 
 .banner--head {
-    display: none;
+    grid-area: bhead;
+    align-self: end;
+    text-shadow: 0px 1.5px 2px rgba(0, 0, 0, 1);
 }
 
 .banner--sub {
@@ -67,27 +68,29 @@ clearfix:after {
     align-self: start;
     text-align: center;
     text-shadow: 0px 1.5px 2px rgba(150, 150, 150, 1);
-    font-size: 150%;
-    font-weight: bold;
+    width: 18em;
 }
 
 .banner--link,
 .banner--link:visited {
     grid-area: blink;
-    padding: 0.8em 1em;
-    background-color:var(--green);
+    padding: 10px 15px;
+    background-color: var(--orange);
     align-self: start;
-    border-radius: 5em;
+    border-radius: 0.2em;
     text-align: center;
     color: #ffffff;
     transition: all 0.3s ease-in-out;
     margin-top: 0.5em;
 }
 
-.banner--link:hover{
-    background-color:whitesmoke;
-    color: var(--green);
+.banner--link:hover,
+.card--link:hover {
+    background-color: #ED7128;
     cursor: pointer;
+    /* -webkit-box-shadow: 0px 10px 17px -6px rgba(0, 0, 0, 0.74);
+    -moz-box-shadow: 0px 10px 17px -6px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 10px 17px -6px rgba(0, 0, 0, 0.74); */
 }
 
 .banner--head,
@@ -97,47 +100,60 @@ clearfix:after {
 }
 
 .services {
+    background: url("/img/95063a37.png");
+    display: grid;
+    grid-template-columns: 1em 3fr 1em;
+    grid-template-areas: " . shead ." ". fserv ." ". cserv ." ". pserv .";
+    grid-gap: 1em 0.5em;
+    padding-bottom: 1.8em;
+}
+
+.services--head {
+    grid-area: shead;
+    margin: 1em 0;
+    justify-self: center;
+}
+
+.funeral--service {
+    grid-area: fserv;
+}
+
+.cremation--service {
+    grid-area: cserv;
+}
+
+.prearrang--service {
+    grid-area: pserv;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card--img {
     width: 100%;
+}
+
+.card>.container {
+    padding: 0.6em;
+    background-color: #ffffff;
+}
+
+.card--title,
+.card--cont {
+    color: var(--green);
+    margin: 0.3em 0;
+}
+
+.card--link {
     display: block;
-}
-
-.services div{
-    width: 100%;
-    height: 6em;
-    margin-top: 0.3em;
-}
-
-.services p{
-    line-height: 6em;
+    padding: 0.5em 1em;
+    background-color: var(--orange);
     text-align: center;
-}
-
-#service--funeral{
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/img/fun.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-#service--cremation{
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/img/urn.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-#service--prearr{
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/img/plan.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    border-radius: 0.2em;
+    transition: 0.3s all ease-in-out;
+    margin: 0.5em 0;
+    font-weight: 700;
 }
 
 .obituaries {
