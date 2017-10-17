@@ -11,8 +11,8 @@ h1,
 h2,
 h3 {
     font-family: 'Vollkorn', serif;
-    font-weight: 700;
     color: #ffffff; 
+    font-style: italic;
 }
 
 p,
@@ -75,7 +75,7 @@ clearfix:after {
 .banner--link:visited {
     grid-area: blink;
     padding: 0.8em 1em;
-    background-color:var(--green);
+    background-color:rgb(67, 193, 109);
     align-self: start;
     border-radius: 5em;
     text-align: center;
@@ -85,8 +85,7 @@ clearfix:after {
 }
 
 .banner--link:hover{
-    background-color:whitesmoke;
-    color: var(--green);
+    background-color:var(--green);
     cursor: pointer;
 }
 
@@ -112,6 +111,7 @@ clearfix:after {
     text-align: center;
 }
 
+/* This repetition should have a work around though */
 #service--funeral{
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/img/fun.jpg');
     background-repeat: no-repeat;
@@ -140,24 +140,37 @@ clearfix:after {
     background-size: cover;
 }
 
-.obituaries {
+/* .obituaries {
     display: grid;
     grid-gap: 2em 0.5em;
     padding-bottom: 4em;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas: ". obh ." ". ob1 ." ". ob2 ." ". ob3 ." ". ob4 ." ". ob5 ." ". oblink .";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "obh obh obh" ". ob1 ." ". ob2 ." ". ob3 ." ". ob4 ." ". ob5 ." ". oblink .";
+    background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) );
+    
+} */
+
+.obituaries {
+    display: grid;
+    grid-gap: 1.5em 0.4em;
+    grid-template-columns: 1em 1fr 1fr 1em;
+    grid-template-areas: ". obh obh  ." ". ob1 ob2 ." ". ob3 ob4 ." ". ob5 ob5 ." ". oblink oblink . ";
+    padding-bottom: 2em;
+    background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) );
+    
 }
 
 .obituaries--head {
     grid-area: obh;
     margin-top: 1em;
+    text-align: center;
 }
 
 .ob,
 .ob p,
 .obituaries--head {
     justify-self: center;
-    color: var(--orange);
+    color: var(--purple);
 }
 
 .ob p {
@@ -201,11 +214,17 @@ clearfix:after {
 .ob--link {
     grid-area: oblink;
     background-color: #702E90;
+    padding: 0.6em 2em;
+    border-radius: 5em;
+    text-align: center;
+    transition: 0.3s;
 }
+.ob--link:hover {
+    background-color: rgb(144, 46, 139);
+}    
 
 .footer {
     background-color: var(--purple);
-    padding: 2em 1em;
     text-align: center;
     display: block;
 }
@@ -215,12 +234,23 @@ clearfix:after {
 }
 
 .map {
-    display: none;
+    overflow:hidden;
+    padding-bottom:80%;
+    position:relative;
+    height:0;
+    margin-bottom:1em;
+}
+.map iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 
 .quicklinks,
 .sign {
-    margin-top: 2em;
+    padding: 1em;
 }
 
 .quicklinks li {
