@@ -54,17 +54,19 @@ clearfix:after {
     background-size: cover;
     display: grid;
     grid-template-columns: 1em 3fr 1em;
-    grid-template-areas: "bhead bhead bhead" ". bsub . " ". blink .";
+    grid-template-areas: ". bhead ." ". bsub ." ". blink .";
     padding: 2em 0;
+    grid-area: ban;
 }
 
 .banner--head {
     display: none;
+    grid-area: bhead;
 }
 
 .banner--sub {
     grid-area: bsub;
-    align-self: start;
+    align-self: center;
     text-align: center;
     text-shadow: 0px 1.5px 2px rgba(150, 150, 150, 1);
     font-size: 150%;
@@ -98,6 +100,7 @@ clearfix:after {
 .services {
     width: 100%;
     display: block;
+    grid-area: serv;
 }
 
 .services div{
@@ -157,7 +160,7 @@ clearfix:after {
     grid-template-areas: ". obh obh  ." ". ob1 ob2 ." ". ob3 ob4 ." ". ob5 ob5 ." ". oblink oblink . ";
     padding-bottom: 2em;
     background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) );
-    
+    grid-area: obi;
 }
 
 .obituaries--head {
@@ -250,7 +253,7 @@ clearfix:after {
 
 .quicklinks,
 .sign {
-    padding: 1em;
+    padding: 1em ;
 }
 
 .quicklinks li {
@@ -271,6 +274,21 @@ clearfix:after {
 }
 
 @media screen and (min-width:768px) {
+    .content{
+        display: grid;
+    }
+    
+    .banner{
+        padding: 4em 0;
+    }
+    .banner--head {
+        display: block;
+        font-size: 380%;
+    }
+    .banner--sub {
+        font-size: 100%;
+        font-weight:400;
+    }
     .banner--link {
         justify-self: center;
         width: 15em;
